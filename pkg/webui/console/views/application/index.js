@@ -54,6 +54,7 @@ import Device from '../device'
         title: sharedMessages.devices,
         path: `${matchedUrl}/devices`,
         icon: 'devices',
+        exact: false,
       },
       {
         title: sharedMessages.data,
