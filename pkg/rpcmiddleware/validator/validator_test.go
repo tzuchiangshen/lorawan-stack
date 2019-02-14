@@ -16,6 +16,7 @@ package validator_test
 
 import (
 	"context"
+	"fmt"
 	"testing"
 
 	"github.com/gogo/protobuf/types"
@@ -70,13 +71,26 @@ func handler(ctx context.Context, req interface{}) (interface{}, error) {
 	return res, nil
 }
 
+type testServer map[string][]string
+
+func (s testServer) AllowedFieldPaths(fullMethod string) []string {
+	v, ok := s[fullMethod]
+	if !ok {
+		panic(fmt.Sprintf("unknown method requested: %s", fullMethod))
+	}
+	return v
+}
+
 func TestUnaryServerInterceptor(t *testing.T) {
 	a := assertions.New(t)
 	ctx := test.Context()
 
-	RegisterAllowedFieldMaskPaths("/ttn.lorawan.v3.Test/Unary", "foo")
-
-	info := &grpc.UnaryServerInfo{FullMethod: "/ttn.lorawan.v3.Test/Unary"}
+	info := &grpc.UnaryServerInfo{
+		Server: testServer{
+			"/ttn.lorawan.v3.Test/Unary": []string{"foo"},
+		},
+		FullMethod: "/ttn.lorawan.v3.Test/Unary",
+	}
 
 	intercept := UnaryServerInterceptor()
 
@@ -139,13 +153,16 @@ func TestStreamServerInterceptor(t *testing.T) {
 	a := assertions.New(t)
 	ctx := test.Context()
 
-	RegisterAllowedFieldMaskPaths("/ttn.lorawan.v3.Test/Stream", "foo")
-
-	info := &grpc.StreamServerInfo{FullMethod: "/ttn.lorawan.v3.Test/Stream"}
+	srv := testServer{
+		"/ttn.lorawan.v3.Test/Stream": []string{"foo"},
+	}
+	info := &grpc.StreamServerInfo{
+		FullMethod: "/ttn.lorawan.v3.Test/Stream",
+	}
 
 	intercept := StreamServerInterceptor()
 
-	err := intercept(nil, &ss{ctx: ctx}, info, func(_ interface{}, stream grpc.ServerStream) error {
+	err := intercept(srv, &ss{ctx: ctx}, info, func(_ interface{}, stream grpc.ServerStream) error {
 
 		var subject interface{ getResult() *testSubject }
 
