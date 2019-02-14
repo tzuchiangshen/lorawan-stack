@@ -39,6 +39,10 @@ type fieldMaskGetter interface {
 	GetFieldMask() types.FieldMask
 }
 
+type requestFieldPathValidator interface {
+	ValidateRequestFieldPaths(rpcFullMethod string, requestedPaths ...string) error
+}
+
 var errMissingFieldMask = errors.DefineInvalidArgument("missing_field_mask", "missing field mask")
 var errForbiddenFieldMaskPaths = errors.DefineInvalidArgument("field_mask_paths", "forbidden path(s) in field mask", "forbidden_paths")
 
@@ -79,12 +83,24 @@ func convertError(err error) error {
 // Invalid messages will be rejected with the error returned from the validator,
 // if that error is a TTN error, or with an `InvalidArgument` if it isn't.
 //
-// If the RPC's FullPath has a registered list of allowed field mask paths (see
+// If the Server validates request field paths by implementing
+//   ValidateRequestFieldPaths(rpcFullMethod string, requestedPaths ...string) error
+// or if the RPC's FullPath has a registered list of allowed field mask paths (see
 // RegisterAllowedFieldMaskPaths) and the message implements GetFieldMask() types.FieldMask
 // then the field mask paths are validated according to the registered list.
 func UnaryServerInterceptor() grpc.UnaryServerInterceptor {
 	return func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
-		if allowed, ok := allowedFieldMaskPaths[info.FullMethod]; ok {
+		if s, ok := info.Server.(requestFieldPathValidator); ok {
+			if v, ok := req.(fieldMaskGetter); ok {
+				requested := v.GetFieldMask().Paths
+				if len(requested) == 0 {
+					return nil, errMissingFieldMask
+				}
+				if err := s.ValidateRequestFieldPaths(info.FullMethod, requested...); err != nil {
+					return nil, err
+				}
+			}
+		} else if allowed, ok := allowedFieldMaskPaths[info.FullMethod]; ok {
 			if v, ok := req.(fieldMaskGetter); ok {
 				requested := v.GetFieldMask().Paths
 				if len(requested) == 0 {
@@ -122,33 +138,47 @@ func UnaryServerInterceptor() grpc.UnaryServerInterceptor {
 // before reaching any userspace handlers. For `ClientStream` (n:1) or `BidiStream` (n:m)
 // RPCs, the messages will be rejected on calls to `stream.Recv()`.
 //
-// If the RPC's FullPath has a registered list of allowed field mask paths (see
+// If the Server validates request field paths by implementing
+//   ValidateRequestFieldPaths(rpcFullMethod string, requestedPaths ...string) error
+// or if the RPC's FullPath has a registered list of allowed field mask paths (see
 // RegisterAllowedFieldMaskPaths) and the message implements GetFieldMask() types.FieldMask
 // then the field mask paths are validated according to the registered list.
 func StreamServerInterceptor() grpc.StreamServerInterceptor {
 	return func(srv interface{}, stream grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
-		wrapper := &recvWrapper{ServerStream: stream, allowedFieldMaskPaths: allowedFieldMaskPaths[info.FullMethod]}
+		wrapper := &recvWrapper{ServerStream: stream}
+		if s, ok := srv.(requestFieldPathValidator); ok {
+			wrapper.validateFieldMaskPaths = func(requested ...string) error {
+				return s.ValidateRequestFieldPaths(info.FullMethod, requested...)
+			}
+		} else if allowed, ok := allowedFieldMaskPaths[info.FullMethod]; ok {
+			wrapper.validateFieldMaskPaths = func(requested ...string) error {
+				if forbiddenPaths := forbiddenPaths(requested, allowed...); len(forbiddenPaths) > 0 {
+					return errForbiddenFieldMaskPaths.WithAttributes("forbidden_paths", forbiddenPaths)
+				}
+				return nil
+			}
+		}
 		return handler(srv, wrapper)
 	}
 }
 
 type recvWrapper struct {
 	grpc.ServerStream
-	allowedFieldMaskPaths []string
+	validateFieldMaskPaths func(...string) error
 }
 
 func (s *recvWrapper) RecvMsg(m interface{}) error {
 	if err := s.ServerStream.RecvMsg(m); err != nil {
 		return err
 	}
-	if s.allowedFieldMaskPaths != nil {
+	if s.validateFieldMaskPaths != nil {
 		if v, ok := m.(fieldMaskGetter); ok {
 			requested := v.GetFieldMask().Paths
 			if len(requested) == 0 {
 				return errMissingFieldMask
 			}
-			if forbiddenPaths := forbiddenPaths(requested, s.allowedFieldMaskPaths...); len(forbiddenPaths) > 0 {
-				return errForbiddenFieldMaskPaths.WithAttributes("forbidden_paths", forbiddenPaths)
+			if err := s.validateFieldMaskPaths(requested...); err != nil {
+				return err
 			}
 		}
 	}
