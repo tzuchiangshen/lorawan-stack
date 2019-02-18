@@ -38,6 +38,7 @@ export default defineMessages({
   generalInformation: 'General Information',
   generalSettings: 'General Settings',
   integrations: 'Integrations',
+  keyId: 'Key ID',
   loading: 'Loading',
   login: 'Login',
   logout: 'Logout',
@@ -62,4 +63,5 @@ export default defineMessages({
   validateRequired: 'This field is required',
   validateTooLong: 'Too long',
   validateTooShort: 'Too short',
+  validateRights: 'At least one right should be selected',
 })
