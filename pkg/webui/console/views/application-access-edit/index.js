@@ -139,8 +139,6 @@ export default class ApplicationAccessEdit extends React.Component {
     }
   }
 
-  handleCancel () { }
-
   render () {
     const { apiKey, rights, fetching, error, keyId } = this.props
 
@@ -222,10 +220,7 @@ export default class ApplicationAccessEdit extends React.Component {
                 {rightsItems}
               </FieldGroup>
               <div className={style.submitBar}>
-                <div>
-                  <Button type="submit" message={sharedMessages.saveChanges} />
-                  <Button type="reset" naked secondary message={sharedMessages.cancel} />
-                </div>
+                <Button type="submit" message={sharedMessages.saveChanges} />
                 <ModalButton
                   type="button"
                   icon="delete"
