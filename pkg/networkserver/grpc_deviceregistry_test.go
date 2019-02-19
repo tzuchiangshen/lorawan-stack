@@ -212,7 +212,7 @@ func TestDeviceRegistrySet(t *testing.T) {
 				panic("Unreachable")
 			},
 			Request: &ttnpb.SetEndDeviceRequest{
-				Device: ttnpb.EndDevice{
+				EndDevice: ttnpb.EndDevice{
 					EndDeviceIdentifiers: ids,
 					SupportsJoin:         true,
 					MACSettings:          &ttnpb.MACSettings{},
@@ -313,7 +313,7 @@ func TestDeviceRegistrySet(t *testing.T) {
 				}, nil
 			},
 			Request: &ttnpb.SetEndDeviceRequest{
-				Device: ttnpb.EndDevice{
+				EndDevice: ttnpb.EndDevice{
 					EndDeviceIdentifiers: ids,
 					SupportsJoin:         true,
 					MACSettings:          &ttnpb.MACSettings{},
