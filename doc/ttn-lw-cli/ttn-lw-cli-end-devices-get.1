@@ -1,0 +1,954 @@
+.TH "TTN-LW-CLI" "1" "Feb 2019" "TTN" "The Things Network Stack for LoRaWAN" 
+.nh
+.ad l
+
+
+.SH NAME
+.PP
+ttn\-lw\-cli\-end\-devices\-get \- Get an end device
+
+
+.SH SYNOPSIS
+.PP
+\fBttn\-lw\-cli end\-devices get [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Get an end device
+
+
+.SH OPTIONS
+.PP
+\fB\-\-application\-id\fP=""
+
+.PP
+\fB\-\-attributes\fP[=false]
+    select the attributes field
+
+.PP
+\fB\-\-battery\-percentage\fP[=false]
+    select the battery\_percentage field
+
+.PP
+\fB\-\-default\-mac\-parameters\fP[=false]
+    select the default\_mac\_parameters field and all sub\-fields
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-ack\-delay\fP[=false]
+    select the default\_mac\_parameters.adr\_ack\_delay field
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-ack\-limit\fP[=false]
+    select the default\_mac\_parameters.adr\_ack\_limit field
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-data\-rate\-index\fP[=false]
+    select the default\_mac\_parameters.adr\_data\_rate\_index field
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-nb\-trans\fP[=false]
+    select the default\_mac\_parameters.adr\_nb\_trans field
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-tx\-power\-index\fP[=false]
+    select the default\_mac\_parameters.adr\_tx\_power\_index field
+
+.PP
+\fB\-\-default\-mac\-parameters.beacon\-frequency\fP[=false]
+    select the default\_mac\_parameters.beacon\_frequency field
+
+.PP
+\fB\-\-default\-mac\-parameters.channels\fP[=false]
+    select the default\_mac\_parameters.channels field
+
+.PP
+\fB\-\-default\-mac\-parameters.downlink\-dwell\-time\fP[=false]
+    select the default\_mac\_parameters.downlink\_dwell\_time field
+
+.PP
+\fB\-\-default\-mac\-parameters.max\-duty\-cycle\fP[=false]
+    select the default\_mac\_parameters.max\_duty\_cycle field
+
+.PP
+\fB\-\-default\-mac\-parameters.max\-eirp\fP[=false]
+    select the default\_mac\_parameters.max\_eirp field
+
+.PP
+\fB\-\-default\-mac\-parameters.ping\-slot\-data\-rate\-index\fP[=false]
+    select the default\_mac\_parameters.ping\_slot\_data\_rate\_index field
+
+.PP
+\fB\-\-default\-mac\-parameters.ping\-slot\-frequency\fP[=false]
+    select the default\_mac\_parameters.ping\_slot\_frequency field
+
+.PP
+\fB\-\-default\-mac\-parameters.rejoin\-count\-periodicity\fP[=false]
+    select the default\_mac\_parameters.rejoin\_count\_periodicity field
+
+.PP
+\fB\-\-default\-mac\-parameters.rejoin\-time\-periodicity\fP[=false]
+    select the default\_mac\_parameters.rejoin\_time\_periodicity field
+
+.PP
+\fB\-\-default\-mac\-parameters.rx1\-data\-rate\-offset\fP[=false]
+    select the default\_mac\_parameters.rx1\_data\_rate\_offset field
+
+.PP
+\fB\-\-default\-mac\-parameters.rx1\-delay\fP[=false]
+    select the default\_mac\_parameters.rx1\_delay field
+
+.PP
+\fB\-\-default\-mac\-parameters.rx2\-data\-rate\-index\fP[=false]
+    select the default\_mac\_parameters.rx2\_data\_rate\_index field
+
+.PP
+\fB\-\-default\-mac\-parameters.rx2\-frequency\fP[=false]
+    select the default\_mac\_parameters.rx2\_frequency field
+
+.PP
+\fB\-\-default\-mac\-parameters.uplink\-dwell\-time\fP[=false]
+    select the default\_mac\_parameters.uplink\_dwell\_time field
+
+.PP
+\fB\-\-description\fP[=false]
+    select the description field
+
+.PP
+\fB\-\-dev\-eui\fP=""
+    (hex)
+
+.PP
+\fB\-\-device\-id\fP=""
+
+.PP
+\fB\-\-downlink\-margin\fP[=false]
+    select the downlink\_margin field
+
+.PP
+\fB\-\-formatters\fP[=false]
+    select the formatters field and all sub\-fields
+
+.PP
+\fB\-\-formatters.down\-formatter\fP[=false]
+    select the formatters.down\_formatter field
+
+.PP
+\fB\-\-formatters.down\-formatter\-parameter\fP[=false]
+    select the formatters.down\_formatter\_parameter field
+
+.PP
+\fB\-\-formatters.up\-formatter\fP[=false]
+    select the formatters.up\_formatter field
+
+.PP
+\fB\-\-formatters.up\-formatter\-parameter\fP[=false]
+    select the formatters.up\_formatter\_parameter field
+
+.PP
+\fB\-\-frequency\-plan\-id\fP[=false]
+    select the frequency\_plan\_id field
+
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+    help for get
+
+.PP
+\fB\-\-join\-eui\fP=""
+    (hex)
+
+.PP
+\fB\-\-last\-dev\-nonce\fP[=false]
+    select the last\_dev\_nonce field
+
+.PP
+\fB\-\-last\-dev\-status\-received\-at\fP[=false]
+    select the last\_dev\_status\_received\_at field
+
+.PP
+\fB\-\-last\-join\-nonce\fP[=false]
+    select the last\_join\_nonce field
+
+.PP
+\fB\-\-last\-rj\-count\-0\fP[=false]
+    select the last\_rj\_count\_0 field
+
+.PP
+\fB\-\-last\-rj\-count\-1\fP[=false]
+    select the last\_rj\_count\_1 field
+
+.PP
+\fB\-\-locations\fP[=false]
+    select the locations field
+
+.PP
+\fB\-\-lorawan\-phy\-version\fP[=false]
+    select the lorawan\_phy\_version field
+
+.PP
+\fB\-\-lorawan\-version\fP[=false]
+    select the lorawan\_version field
+
+.PP
+\fB\-\-mac\-settings\fP[=false]
+    select the mac\_settings field and all sub\-fields
+
+.PP
+\fB\-\-mac\-settings.adr\-margin\fP[=false]
+    select the mac\_settings.adr\_margin field
+
+.PP
+\fB\-\-mac\-settings.class\-b\-timeout\fP[=false]
+    select the mac\_settings.class\_b\_timeout field
+
+.PP
+\fB\-\-mac\-settings.class\-c\-timeout\fP[=false]
+    select the mac\_settings.class\_c\_timeout field
+
+.PP
+\fB\-\-mac\-settings.status\-count\-periodicity\fP[=false]
+    select the mac\_settings.status\_count\_periodicity field
+
+.PP
+\fB\-\-mac\-settings.status\-time\-periodicity\fP[=false]
+    select the mac\_settings.status\_time\_periodicity field
+
+.PP
+\fB\-\-mac\-settings.use\-adr\fP[=false]
+    select the mac\_settings.use\_adr field
+
+.PP
+\fB\-\-mac\-state\fP[=false]
+    select the mac\_state field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.current\-parameters\fP[=false]
+    select the mac\_state.current\_parameters field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.current\-parameters.adr\-ack\-delay\fP[=false]
+    select the mac\_state.current\_parameters.adr\_ack\_delay field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.adr\-ack\-limit\fP[=false]
+    select the mac\_state.current\_parameters.adr\_ack\_limit field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.adr\-data\-rate\-index\fP[=false]
+    select the mac\_state.current\_parameters.adr\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.adr\-nb\-trans\fP[=false]
+    select the mac\_state.current\_parameters.adr\_nb\_trans field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.adr\-tx\-power\-index\fP[=false]
+    select the mac\_state.current\_parameters.adr\_tx\_power\_index field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.beacon\-frequency\fP[=false]
+    select the mac\_state.current\_parameters.beacon\_frequency field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.channels\fP[=false]
+    select the mac\_state.current\_parameters.channels field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.downlink\-dwell\-time\fP[=false]
+    select the mac\_state.current\_parameters.downlink\_dwell\_time field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.max\-duty\-cycle\fP[=false]
+    select the mac\_state.current\_parameters.max\_duty\_cycle field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.max\-eirp\fP[=false]
+    select the mac\_state.current\_parameters.max\_eirp field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.ping\-slot\-data\-rate\-index\fP[=false]
+    select the mac\_state.current\_parameters.ping\_slot\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.ping\-slot\-frequency\fP[=false]
+    select the mac\_state.current\_parameters.ping\_slot\_frequency field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rejoin\-count\-periodicity\fP[=false]
+    select the mac\_state.current\_parameters.rejoin\_count\_periodicity field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rejoin\-time\-periodicity\fP[=false]
+    select the mac\_state.current\_parameters.rejoin\_time\_periodicity field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rx1\-data\-rate\-offset\fP[=false]
+    select the mac\_state.current\_parameters.rx1\_data\_rate\_offset field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rx1\-delay\fP[=false]
+    select the mac\_state.current\_parameters.rx1\_delay field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rx2\-data\-rate\-index\fP[=false]
+    select the mac\_state.current\_parameters.rx2\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.rx2\-frequency\fP[=false]
+    select the mac\_state.current\_parameters.rx2\_frequency field
+
+.PP
+\fB\-\-mac\-state.current\-parameters.uplink\-dwell\-time\fP[=false]
+    select the mac\_state.current\_parameters.uplink\_dwell\_time field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters\fP[=false]
+    select the mac\_state.desired\_parameters field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.adr\-ack\-delay\fP[=false]
+    select the mac\_state.desired\_parameters.adr\_ack\_delay field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.adr\-ack\-limit\fP[=false]
+    select the mac\_state.desired\_parameters.adr\_ack\_limit field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.adr\-data\-rate\-index\fP[=false]
+    select the mac\_state.desired\_parameters.adr\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.adr\-nb\-trans\fP[=false]
+    select the mac\_state.desired\_parameters.adr\_nb\_trans field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.adr\-tx\-power\-index\fP[=false]
+    select the mac\_state.desired\_parameters.adr\_tx\_power\_index field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.beacon\-frequency\fP[=false]
+    select the mac\_state.desired\_parameters.beacon\_frequency field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.channels\fP[=false]
+    select the mac\_state.desired\_parameters.channels field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.downlink\-dwell\-time\fP[=false]
+    select the mac\_state.desired\_parameters.downlink\_dwell\_time field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.max\-duty\-cycle\fP[=false]
+    select the mac\_state.desired\_parameters.max\_duty\_cycle field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.max\-eirp\fP[=false]
+    select the mac\_state.desired\_parameters.max\_eirp field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.ping\-slot\-data\-rate\-index\fP[=false]
+    select the mac\_state.desired\_parameters.ping\_slot\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.ping\-slot\-frequency\fP[=false]
+    select the mac\_state.desired\_parameters.ping\_slot\_frequency field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rejoin\-count\-periodicity\fP[=false]
+    select the mac\_state.desired\_parameters.rejoin\_count\_periodicity field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rejoin\-time\-periodicity\fP[=false]
+    select the mac\_state.desired\_parameters.rejoin\_time\_periodicity field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rx1\-data\-rate\-offset\fP[=false]
+    select the mac\_state.desired\_parameters.rx1\_data\_rate\_offset field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rx1\-delay\fP[=false]
+    select the mac\_state.desired\_parameters.rx1\_delay field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rx2\-data\-rate\-index\fP[=false]
+    select the mac\_state.desired\_parameters.rx2\_data\_rate\_index field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.rx2\-frequency\fP[=false]
+    select the mac\_state.desired\_parameters.rx2\_frequency field
+
+.PP
+\fB\-\-mac\-state.desired\-parameters.uplink\-dwell\-time\fP[=false]
+    select the mac\_state.desired\_parameters.uplink\_dwell\_time field
+
+.PP
+\fB\-\-mac\-state.device\-class\fP[=false]
+    select the mac\_state.device\_class field
+
+.PP
+\fB\-\-mac\-state.last\-confirmed\-downlink\-at\fP[=false]
+    select the mac\_state.last\_confirmed\_downlink\_at field
+
+.PP
+\fB\-\-mac\-state.last\-dev\-status\-f\-cnt\-up\fP[=false]
+    select the mac\_state.last\_dev\_status\_f\_cnt\_up field
+
+.PP
+\fB\-\-mac\-state.lorawan\-version\fP[=false]
+    select the mac\_state.lorawan\_version field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink\fP[=false]
+    select the mac\_state.pending\_application\_downlink field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.class\-b\-c\fP[=false]
+    select the mac\_state.pending\_application\_downlink.class\_b\_c field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.class\-b\-c.absolute\-time\fP[=false]
+    select the mac\_state.pending\_application\_downlink.class\_b\_c.absolute\_time field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.class\-b\-c.gateways\fP[=false]
+    select the mac\_state.pending\_application\_downlink.class\_b\_c.gateways field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.confirmed\fP[=false]
+    select the mac\_state.pending\_application\_downlink.confirmed field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.correlation\-ids\fP[=false]
+    select the mac\_state.pending\_application\_downlink.correlation\_ids field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.decoded\-payload\fP[=false]
+    select the mac\_state.pending\_application\_downlink.decoded\_payload field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.decoded\-payload.fields\fP[=false]
+    select the mac\_state.pending\_application\_downlink.decoded\_payload.fields field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.f\-cnt\fP[=false]
+    select the mac\_state.pending\_application\_downlink.f\_cnt field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.f\-port\fP[=false]
+    select the mac\_state.pending\_application\_downlink.f\_port field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.frm\-payload\fP[=false]
+    select the mac\_state.pending\_application\_downlink.frm\_payload field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.priority\fP[=false]
+    select the mac\_state.pending\_application\_downlink.priority field
+
+.PP
+\fB\-\-mac\-state.pending\-application\-downlink.session\-key\-id\fP[=false]
+    select the mac\_state.pending\_application\_downlink.session\_key\_id field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request\fP[=false]
+    select the mac\_state.pending\_join\_request field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.cf\-list\fP[=false]
+    select the mac\_state.pending\_join\_request.cf\_list field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.cf\-list.ch\-masks\fP[=false]
+    select the mac\_state.pending\_join\_request.cf\_list.ch\_masks field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.cf\-list.freq\fP[=false]
+    select the mac\_state.pending\_join\_request.cf\_list.freq field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.cf\-list.type\fP[=false]
+    select the mac\_state.pending\_join\_request.cf\_list.type field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.correlation\-ids\fP[=false]
+    select the mac\_state.pending\_join\_request.correlation\_ids field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.dev\-addr\fP[=false]
+    select the mac\_state.pending\_join\_request.dev\_addr field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.downlink\-settings\fP[=false]
+    select the mac\_state.pending\_join\_request.downlink\_settings field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.downlink\-settings.opt\-neg\fP[=false]
+    select the mac\_state.pending\_join\_request.downlink\_settings.opt\_neg field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.downlink\-settings.rx1\-dr\-offset\fP[=false]
+    select the mac\_state.pending\_join\_request.downlink\_settings.rx1\_dr\_offset field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.downlink\-settings.rx2\-dr\fP[=false]
+    select the mac\_state.pending\_join\_request.downlink\_settings.rx2\_dr field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.net\-id\fP[=false]
+    select the mac\_state.pending\_join\_request.net\_id field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.payload\fP[=false]
+    select the mac\_state.pending\_join\_request.payload field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.payload.m\-hdr\fP[=false]
+    select the mac\_state.pending\_join\_request.payload.m\_hdr field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.payload.m\-hdr.m\-type\fP[=false]
+    select the mac\_state.pending\_join\_request.payload.m\_hdr.m\_type field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.payload.m\-hdr.major\fP[=false]
+    select the mac\_state.pending\_join\_request.payload.m\_hdr.major field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.payload.mic\fP[=false]
+    select the mac\_state.pending\_join\_request.payload.mic field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.raw\-payload\fP[=false]
+    select the mac\_state.pending\_join\_request.raw\_payload field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.rx\-delay\fP[=false]
+    select the mac\_state.pending\_join\_request.rx\_delay field
+
+.PP
+\fB\-\-mac\-state.pending\-join\-request.selected\-mac\-version\fP[=false]
+    select the mac\_state.pending\_join\_request.selected\_mac\_version field
+
+.PP
+\fB\-\-mac\-state.pending\-requests\fP[=false]
+    select the mac\_state.pending\_requests field
+
+.PP
+\fB\-\-mac\-state.ping\-slot\-periodicity\fP[=false]
+    select the mac\_state.ping\_slot\_periodicity field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept\fP[=false]
+    select the mac\_state.queued\_join\_accept field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.app\-s\-key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.app\_s\_key field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.app\-s\-key.kek\-label\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.app\_s\_key.kek\_label field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.app\-s\-key.key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.app\_s\_key.key field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.f\-nwk\-s\-int\-key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.f\_nwk\_s\_int\_key field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.f\-nwk\-s\-int\-key.kek\-label\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.f\_nwk\_s\_int\_key.kek\_label field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.f\-nwk\-s\-int\-key.key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.f\_nwk\_s\_int\_key.key field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.nwk\-s\-enc\-key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.nwk\_s\_enc\_key field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.nwk\-s\-enc\-key.kek\-label\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.nwk\_s\_enc\_key.kek\_label field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.nwk\-s\-enc\-key.key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.nwk\_s\_enc\_key.key field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.s\-nwk\-s\-int\-key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.s\_nwk\_s\_int\_key field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.s\-nwk\-s\-int\-key.kek\-label\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.s\_nwk\_s\_int\_key.kek\_label field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.s\-nwk\-s\-int\-key.key\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.s\_nwk\_s\_int\_key.key field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.keys.session\-key\-id\fP[=false]
+    select the mac\_state.queued\_join\_accept.keys.session\_key\_id field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.payload\fP[=false]
+    select the mac\_state.queued\_join\_accept.payload field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request\fP[=false]
+    select the mac\_state.queued\_join\_accept.request field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.cf\-list\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.cf\_list field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.cf\-list.ch\-masks\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.cf\_list.ch\_masks field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.cf\-list.freq\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.cf\_list.freq field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.cf\-list.type\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.cf\_list.type field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.correlation\-ids\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.correlation\_ids field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.dev\-addr\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.dev\_addr field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.downlink\-settings\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.downlink\_settings field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.downlink\-settings.opt\-neg\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.downlink\_settings.opt\_neg field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.downlink\-settings.rx1\-dr\-offset\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.downlink\_settings.rx1\_dr\_offset field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.downlink\-settings.rx2\-dr\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.downlink\_settings.rx2\_dr field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.net\-id\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.net\_id field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.payload\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.payload field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.payload.m\-hdr\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.payload.m\_hdr field and all sub\-fields
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.payload.m\-hdr.m\-type\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.payload.m\_hdr.m\_type field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.payload.m\-hdr.major\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.payload.m\_hdr.major field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.payload.mic\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.payload.mic field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.raw\-payload\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.raw\_payload field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.rx\-delay\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.rx\_delay field
+
+.PP
+\fB\-\-mac\-state.queued\-join\-accept.request.selected\-mac\-version\fP[=false]
+    select the mac\_state.queued\_join\_accept.request.selected\_mac\_version field
+
+.PP
+\fB\-\-mac\-state.queued\-responses\fP[=false]
+    select the mac\_state.queued\_responses field
+
+.PP
+\fB\-\-mac\-state.rx\-windows\-available\fP[=false]
+    select the mac\_state.rx\_windows\_available field
+
+.PP
+\fB\-\-max\-frequency\fP[=false]
+    select the max\_frequency field
+
+.PP
+\fB\-\-min\-frequency\fP[=false]
+    select the min\_frequency field
+
+.PP
+\fB\-\-name\fP[=false]
+    select the name field
+
+.PP
+\fB\-\-net\-id\fP[=false]
+    select the net\_id field
+
+.PP
+\fB\-\-power\-state\fP[=false]
+    select the power\_state field
+
+.PP
+\fB\-\-provisioner\-id\fP[=false]
+    select the provisioner\_id field
+
+.PP
+\fB\-\-provisioning\-data\fP[=false]
+    select the provisioning\_data field and all sub\-fields
+
+.PP
+\fB\-\-provisioning\-data.fields\fP[=false]
+    select the provisioning\_data.fields field
+
+.PP
+\fB\-\-queued\-application\-downlinks\fP[=false]
+    select the queued\_application\_downlinks field
+
+.PP
+\fB\-\-recent\-downlinks\fP[=false]
+    select the recent\_downlinks field
+
+.PP
+\fB\-\-recent\-uplinks\fP[=false]
+    select the recent\_uplinks field
+
+.PP
+\fB\-\-resets\-f\-cnt\fP[=false]
+    select the resets\_f\_cnt field
+
+.PP
+\fB\-\-resets\-join\-nonces\fP[=false]
+    select the resets\_join\_nonces field
+
+.PP
+\fB\-\-root\-keys\fP[=false]
+    select the root\_keys field and all sub\-fields
+
+.PP
+\fB\-\-root\-keys.app\-key\fP[=false]
+    select the root\_keys.app\_key field and all sub\-fields
+
+.PP
+\fB\-\-root\-keys.app\-key.kek\-label\fP[=false]
+    select the root\_keys.app\_key.kek\_label field
+
+.PP
+\fB\-\-root\-keys.app\-key.key\fP[=false]
+    select the root\_keys.app\_key.key field
+
+.PP
+\fB\-\-root\-keys.nwk\-key\fP[=false]
+    select the root\_keys.nwk\_key field and all sub\-fields
+
+.PP
+\fB\-\-root\-keys.nwk\-key.kek\-label\fP[=false]
+    select the root\_keys.nwk\_key.kek\_label field
+
+.PP
+\fB\-\-root\-keys.nwk\-key.key\fP[=false]
+    select the root\_keys.nwk\_key.key field
+
+.PP
+\fB\-\-root\-keys.root\-key\-id\fP[=false]
+    select the root\_keys.root\_key\_id field
+
+.PP
+\fB\-\-service\-profile\-id\fP[=false]
+    select the service\_profile\_id field
+
+.PP
+\fB\-\-session\fP[=false]
+    select the session field and all sub\-fields
+
+.PP
+\fB\-\-session.dev\-addr\fP[=false]
+    select the session.dev\_addr field
+
+.PP
+\fB\-\-session.keys\fP[=false]
+    select the session.keys field and all sub\-fields
+
+.PP
+\fB\-\-session.keys.app\-s\-key\fP[=false]
+    select the session.keys.app\_s\_key field and all sub\-fields
+
+.PP
+\fB\-\-session.keys.app\-s\-key.kek\-label\fP[=false]
+    select the session.keys.app\_s\_key.kek\_label field
+
+.PP
+\fB\-\-session.keys.app\-s\-key.key\fP[=false]
+    select the session.keys.app\_s\_key.key field
+
+.PP
+\fB\-\-session.keys.f\-nwk\-s\-int\-key\fP[=false]
+    select the session.keys.f\_nwk\_s\_int\_key field and all sub\-fields
+
+.PP
+\fB\-\-session.keys.f\-nwk\-s\-int\-key.kek\-label\fP[=false]
+    select the session.keys.f\_nwk\_s\_int\_key.kek\_label field
+
+.PP
+\fB\-\-session.keys.f\-nwk\-s\-int\-key.key\fP[=false]
+    select the session.keys.f\_nwk\_s\_int\_key.key field
+
+.PP
+\fB\-\-session.keys.nwk\-s\-enc\-key\fP[=false]
+    select the session.keys.nwk\_s\_enc\_key field and all sub\-fields
+
+.PP
+\fB\-\-session.keys.nwk\-s\-enc\-key.kek\-label\fP[=false]
+    select the session.keys.nwk\_s\_enc\_key.kek\_label field
+
+.PP
+\fB\-\-session.keys.nwk\-s\-enc\-key.key\fP[=false]
+    select the session.keys.nwk\_s\_enc\_key.key field
+
+.PP
+\fB\-\-session.keys.s\-nwk\-s\-int\-key\fP[=false]
+    select the session.keys.s\_nwk\_s\_int\_key field and all sub\-fields
+
+.PP
+\fB\-\-session.keys.s\-nwk\-s\-int\-key.kek\-label\fP[=false]
+    select the session.keys.s\_nwk\_s\_int\_key.kek\_label field
+
+.PP
+\fB\-\-session.keys.s\-nwk\-s\-int\-key.key\fP[=false]
+    select the session.keys.s\_nwk\_s\_int\_key.key field
+
+.PP
+\fB\-\-session.last\-a\-f\-cnt\-down\fP[=false]
+    select the session.last\_a\_f\_cnt\_down field
+
+.PP
+\fB\-\-session.last\-conf\-f\-cnt\-down\fP[=false]
+    select the session.last\_conf\_f\_cnt\_down field
+
+.PP
+\fB\-\-session.last\-f\-cnt\-up\fP[=false]
+    select the session.last\_f\_cnt\_up field
+
+.PP
+\fB\-\-session.last\-n\-f\-cnt\-down\fP[=false]
+    select the session.last\_n\_f\_cnt\_down field
+
+.PP
+\fB\-\-session.started\-at\fP[=false]
+    select the session.started\_at field
+
+.PP
+\fB\-\-supports\-class\-b\fP[=false]
+    select the supports\_class\_b field
+
+.PP
+\fB\-\-supports\-class\-c\fP[=false]
+    select the supports\_class\_c field
+
+.PP
+\fB\-\-supports\-join\fP[=false]
+    select the supports\_join field
+
+.PP
+\fB\-\-used\-dev\-nonces\fP[=false]
+    select the used\_dev\_nonces field
+
+.PP
+\fB\-\-uses\-32\-bit\-f\-cnt\fP[=false]
+    select the uses\_32\_bit\_f\_cnt field
+
+.PP
+\fB\-\-version\-ids\fP[=false]
+    select the version\_ids field and all sub\-fields
+
+.PP
+\fB\-\-version\-ids.brand\-id\fP[=false]
+    select the version\_ids.brand\_id field
+
+.PP
+\fB\-\-version\-ids.firmware\-version\fP[=false]
+    select the version\_ids.firmware\_version field
+
+.PP
+\fB\-\-version\-ids.hardware\-version\fP[=false]
+    select the version\_ids.hardware\_version field
+
+.PP
+\fB\-\-version\-ids.model\-id\fP[=false]
+    select the version\_ids.model\_id field
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-application\-server\-address\fP="localhost:8884"
+    Application Server Address
+
+.PP
+\fB\-\-ca\fP=""
+    CA certificate file
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=[$HOME/.ttn\-lw\-cli.yml]
+    Location of the config files
+
+.PP
+\fB\-\-gateway\-server\-address\fP="localhost:8884"
+    Gateway Server Address
+
+.PP
+\fB\-\-identity\-server\-address\fP="localhost:8884"
+    Identity Server Address
+
+.PP
+\fB\-\-input\-format\fP="json"
+    Input format
+
+.PP
+\fB\-\-insecure\fP[=false]
+    Connect without TLS
+
+.PP
+\fB\-\-join\-server\-address\fP="localhost:8884"
+    Join Server Address
+
+.PP
+\fB\-\-log.level\fP="info"
+    The minimum level log messages must have to be shown
+
+.PP
+\fB\-\-network\-server\-address\fP="localhost:8884"
+    Network Server Address
+
+.PP
+\fB\-\-oauth\-server\-address\fP="
+\[la]https://localhost:8885"\[ra]
+    OAuth Server Address
+
+.PP
+\fB\-\-output\-format\fP="json"
+    Output format
+
+
+.SH SEE ALSO
+.PP
+\fBttn\-lw\-cli\-end\-devices(1)\fP

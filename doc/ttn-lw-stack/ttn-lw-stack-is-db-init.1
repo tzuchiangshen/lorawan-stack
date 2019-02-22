@@ -1,0 +1,607 @@
+.TH "TTN-LW-STACK" "1" "Feb 2019" "TTN" "The Things Network Stack for LoRaWAN" 
+.nh
+.ad l
+
+
+.SH NAME
+.PP
+ttn\-lw\-stack\-is\-db\-init \- Initialize the Identity Server database
+
+
+.SH SYNOPSIS
+.PP
+\fBttn\-lw\-stack is\-db init [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Initialize the Identity Server database
+
+
+.SH OPTIONS
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+    help for init
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-as.link\-mode\fP="all"
+    Mode to link applications to their Network Server (all, explicit)
+
+.PP
+\fB\-\-as.mqtt.listen\fP=":1883"
+    Address for the MQTT frontend to listen on
+
+.PP
+\fB\-\-as.mqtt.listen\-tls\fP=":8883"
+    Address for the MQTTS frontend to listen on
+
+.PP
+\fB\-\-as.webhooks.queue\-size\fP=16
+    Number of requests to queue
+
+.PP
+\fB\-\-as.webhooks.target\fP="direct"
+    Target of the integration (direct)
+
+.PP
+\fB\-\-as.webhooks.timeout\fP=5s
+    Wait timeout of the target to process the request
+
+.PP
+\fB\-\-as.webhooks.workers\fP=16
+    Number of workers to process requests
+
+.PP
+\fB\-\-blob.aws.access\-key\-id\fP=""
+    Access key ID
+
+.PP
+\fB\-\-blob.aws.endpoint\fP=""
+    S3 endpoint
+
+.PP
+\fB\-\-blob.aws.region\fP=""
+    S3 region
+
+.PP
+\fB\-\-blob.aws.secret\-access\-key\fP=""
+    Secret access key
+
+.PP
+\fB\-\-blob.aws.session\-token\fP=""
+    Session token
+
+.PP
+\fB\-\-blob.gcp.credentials\fP=""
+    JSON data of the GCP credentials, if not using JSON file
+
+.PP
+\fB\-\-blob.gcp.credentials\-file\fP=""
+    Path to the GCP credentials JSON file
+
+.PP
+\fB\-\-blob.local.directory\fP="./public/blob"
+    Local directory that holds the buckets
+
+.PP
+\fB\-\-blob.provider\fP="local"
+    Blob store provider (local|aws|gcp)
+
+.PP
+\fB\-\-cluster.address\fP=""
+    Address to use for cluster communication
+
+.PP
+\fB\-\-cluster.application\-server\fP=""
+    Address for the Application Server
+
+.PP
+\fB\-\-cluster.gateway\-server\fP=""
+    Address for the Gateway Server
+
+.PP
+\fB\-\-cluster.identity\-server\fP=""
+    Address for the Identity Server
+
+.PP
+\fB\-\-cluster.join\fP=[]
+    Addresses of cluster peers to join
+
+.PP
+\fB\-\-cluster.join\-server\fP=""
+    Address for the Join Server
+
+.PP
+\fB\-\-cluster.keys\fP=[]
+    Keys used to communicate between components of the cluster. The first one will be used by the cluster to identify itself
+
+.PP
+\fB\-\-cluster.name\fP=""
+    Name of the current cluster peer (default: $HOSTNAME)
+
+.PP
+\fB\-\-cluster.network\-server\fP=""
+    Address for the Network Server
+
+.PP
+\fB\-\-cluster.tls\fP[=false]
+    Do cluster gRPC over TLS
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=[$HOME/.ttn\-lw\-stack.yml]
+    Location of the config files
+
+.PP
+\fB\-\-console.mount\fP=""
+    Path on the server where the Console will be served
+
+.PP
+\fB\-\-console.oauth.authorize\-url\fP="
+\[la]http://localhost:1885/oauth/authorize"\[ra]
+    The OAuth Authorize URL
+
+.PP
+\fB\-\-console.oauth.client\-id\fP="console"
+    The OAuth client ID for the Console
+
+.PP
+\fB\-\-console.oauth.client\-secret\fP="console"
+    The OAuth client secret for the Console
+
+.PP
+\fB\-\-console.oauth.token\-url\fP="
+\[la]http://localhost:1885/oauth/token"\[ra]
+    The OAuth Token Exchange URL
+
+.PP
+\fB\-\-console.ui.as.base\-url\fP="
+\[la]http://localhost:1885/api/v3"\[ra]
+    Base URL to the HTTP API
+
+.PP
+\fB\-\-console.ui.as.enabled\fP[=true]
+    Enable this API
+
+.PP
+\fB\-\-console.ui.assets\-base\-url\fP="/assets"
+    The base URL to the page assets
+
+.PP
+\fB\-\-console.ui.canonical\-url\fP="
+\[la]http://localhost:1885/console"\[ra]
+    The page canonical URL
+
+.PP
+\fB\-\-console.ui.css\-file\fP=[console.css]
+    The names of the CSS files
+
+.PP
+\fB\-\-console.ui.descriptions\fP=""
+    The page description
+
+.PP
+\fB\-\-console.ui.gs.base\-url\fP="
+\[la]http://localhost:1885/api/v3"\[ra]
+    Base URL to the HTTP API
+
+.PP
+\fB\-\-console.ui.gs.enabled\fP[=true]
+    Enable this API
+
+.PP
+\fB\-\-console.ui.icon\-prefix\fP="console\-"
+    The prefix to put before the page icons (favicon.ico, touch\-icon.png, og\-image.png)
+
+.PP
+\fB\-\-console.ui.is.base\-url\fP="
+\[la]http://localhost:1885/api/v3"\[ra]
+    Base URL to the HTTP API
+
+.PP
+\fB\-\-console.ui.is.enabled\fP[=true]
+    Enable this API
+
+.PP
+\fB\-\-console.ui.js\-file\fP=[console.js]
+    The names of the JS files
+
+.PP
+\fB\-\-console.ui.js.base\-url\fP="
+\[la]http://localhost:1885/api/v3"\[ra]
+    Base URL to the HTTP API
+
+.PP
+\fB\-\-console.ui.js.enabled\fP[=true]
+    Enable this API
+
+.PP
+\fB\-\-console.ui.language\fP="en"
+    The page language
+
+.PP
+\fB\-\-console.ui.ns.base\-url\fP="
+\[la]http://localhost:1885/api/v3"\[ra]
+    Base URL to the HTTP API
+
+.PP
+\fB\-\-console.ui.ns.enabled\fP[=true]
+    Enable this API
+
+.PP
+\fB\-\-console.ui.site\-name\fP="The Things Network Stack for LoRaWAN"
+    The site name
+
+.PP
+\fB\-\-console.ui.sub\-title\fP="The official configuration platform for The Things Network"
+    The page sub\-title
+
+.PP
+\fB\-\-console.ui.theme\-color\fP=""
+    The page theme color
+
+.PP
+\fB\-\-console.ui.title\fP="Console"
+    The page title
+
+.PP
+\fB\-\-device\-repository.directory\fP=""
+    Retrieve the device repository from the filesystem
+
+.PP
+\fB\-\-device\-repository.url\fP=""
+    Retrieve the device repository from a web server
+
+.PP
+\fB\-\-events.backend\fP="internal"
+    Backend to use for events (internal, redis)
+
+.PP
+\fB\-\-events.redis.address\fP=""
+    Address of the Redis server
+
+.PP
+\fB\-\-events.redis.database\fP=0
+    Redis database to use
+
+.PP
+\fB\-\-events.redis.namespace\fP=[]
+    Namespace for Redis keys
+
+.PP
+\fB\-\-events.redis.password\fP=""
+    Password of the Redis server
+
+.PP
+\fB\-\-frequency\-plans.directory\fP=""
+    Retrieve the frequency plans from the filesystem
+
+.PP
+\fB\-\-frequency\-plans.url\fP="
+\[la]https://raw.githubusercontent.com/TheThingsNetwork/lorawan-frequency-plans/master"\[ra]
+    Retrieve the frequency plans from a web server
+
+.PP
+\fB\-\-grpc.allow\-insecure\-for\-credentials\fP[=false]
+    Allow transmission of credentials over insecure transport
+
+.PP
+\fB\-\-grpc.listen\fP=":1884"
+    Address for the TCP gRPC server to listen on
+
+.PP
+\fB\-\-grpc.listen\-tls\fP=":8884"
+    Address for the TLS gRPC server to listen on
+
+.PP
+\fB\-\-gs.mqtt\-v2.listen\fP=""
+    Address for the MQTT frontend to listen on
+
+.PP
+\fB\-\-gs.mqtt\-v2.listen\-tls\fP=""
+    Address for the MQTTS frontend to listen on
+
+.PP
+\fB\-\-gs.mqtt.listen\fP=":1882"
+    Address for the MQTT frontend to listen on
+
+.PP
+\fB\-\-gs.mqtt.listen\-tls\fP=":8882"
+    Address for the MQTTS frontend to listen on
+
+.PP
+\fB\-\-gs.require\-registered\-gateways\fP[=false]
+    Require the gateways to be registered in the Identity Server
+
+.PP
+\fB\-\-gs.udp.addr\-change\-block\fP=5m0s
+    Time to block traffic when a gateway's address changes
+
+.PP
+\fB\-\-gs.udp.connection\-expires\fP=5m0s
+    Time after which a connection of a gateway expires
+
+.PP
+\fB\-\-gs.udp.downlink\-path\-expires\fP=30s
+    Time after which a downlink path to a gateway expires
+
+.PP
+\fB\-\-gs.udp.listeners\fP=[:1700=]
+    Listen addresses with (optional) fallback frequency plan ID for non\-registered gateways
+
+.PP
+\fB\-\-gs.udp.packet\-buffer\fP=50
+    Buffer size of unhandled packets
+
+.PP
+\fB\-\-gs.udp.packet\-handlers\fP=10
+    Number of concurrent packet handlers
+
+.PP
+\fB\-\-gs.udp.schedule\-late\-time\fP=800ms
+    Time in advance to send downlink to the gateway when scheduling late
+
+.PP
+\fB\-\-http.cookie.block\-key\fP=""
+    Key for cookie contents encryption (16, 24 or 32 bytes)
+
+.PP
+\fB\-\-http.cookie.hash\-key\fP=""
+    Key for cookie contents verification (32 or 64 bytes)
+
+.PP
+\fB\-\-http.listen\fP=":1885"
+    Address for the HTTP server to listen on
+
+.PP
+\fB\-\-http.listen\-tls\fP=":8885"
+    Address for the HTTPS server to listen on
+
+.PP
+\fB\-\-http.metrics.enable\fP[=true]
+    Enable metrics endpoint on HTTP server
+
+.PP
+\fB\-\-http.metrics.password\fP=""
+    Password to protect metrics endpoint (username is metrics)
+
+.PP
+\fB\-\-http.pprof.enable\fP[=true]
+    Enable pprof endpoint on HTTP server
+
+.PP
+\fB\-\-http.pprof.password\fP=""
+    Password to protect pprof endpoint (username is pprof)
+
+.PP
+\fB\-\-http.static.mount\fP="/assets"
+    Path on the server where static assets will be served
+
+.PP
+\fB\-\-http.static.search\-path\fP=[public,/srv/ttn\-lorawan/public]
+    List of paths for finding the directory to serve static assets from
+
+.PP
+\fB\-\-is.auth\-cache.membership\-ttl\fP=10m0s
+    TTL of membership caches
+
+.PP
+\fB\-\-is.database\-uri\fP="postgresql://root@localhost:26257/ttn\_lorawan\_dev?sslmode=disable"
+    Database connection URI
+
+.PP
+\fB\-\-is.email.network.console\-url\fP="
+\[la]http://localhost:1885/console"\[ra]
+    The URL of the Console
+
+.PP
+\fB\-\-is.email.network.identity\-server\-url\fP="
+\[la]http://localhost:1885/oauth"\[ra]
+    The URL of the Identity Server
+
+.PP
+\fB\-\-is.email.network.name\fP="The Things Network Stack for LoRaWAN"
+    The name of the network
+
+.PP
+\fB\-\-is.email.provider\fP=""
+    Email provider to use
+
+.PP
+\fB\-\-is.email.sender\-address\fP=""
+    The address of the sender
+
+.PP
+\fB\-\-is.email.sender\-name\fP=""
+    The name of the sender
+
+.PP
+\fB\-\-is.email.sendgrid.api\-key\fP=""
+    The SendGrid API key to use
+
+.PP
+\fB\-\-is.email.sendgrid.sandbox\fP[=false]
+    Use SendGrid sandbox mode for testing
+
+.PP
+\fB\-\-is.email.smtp.address\fP=""
+    SMTP server address
+
+.PP
+\fB\-\-is.email.smtp.connections\fP=0
+    Maximum number of connections to the SMTP server
+
+.PP
+\fB\-\-is.email.smtp.password\fP=""
+    Password to authenticate with
+
+.PP
+\fB\-\-is.email.smtp.username\fP=""
+    Username to authenticate with
+
+.PP
+\fB\-\-is.oauth.mount\fP=""
+    Path on the server where the OAuth server will be served
+
+.PP
+\fB\-\-is.oauth.ui.assets\-base\-url\fP="/assets"
+    The base URL to the page assets
+
+.PP
+\fB\-\-is.oauth.ui.canonical\-url\fP="
+\[la]http://localhost:1885/oauth"\[ra]
+    The page canonical URL
+
+.PP
+\fB\-\-is.oauth.ui.css\-file\fP=[oauth.css]
+    The names of the CSS files
+
+.PP
+\fB\-\-is.oauth.ui.descriptions\fP=""
+    The page description
+
+.PP
+\fB\-\-is.oauth.ui.icon\-prefix\fP="oauth\-"
+    The prefix to put before the page icons (favicon.ico, touch\-icon.png, og\-image.png)
+
+.PP
+\fB\-\-is.oauth.ui.js\-file\fP=[oauth.js]
+    The names of the JS files
+
+.PP
+\fB\-\-is.oauth.ui.language\fP="en"
+    The page language
+
+.PP
+\fB\-\-is.oauth.ui.site\-name\fP="The Things Network Stack for LoRaWAN"
+    The site name
+
+.PP
+\fB\-\-is.oauth.ui.sub\-title\fP=""
+    The page sub\-title
+
+.PP
+\fB\-\-is.oauth.ui.theme\-color\fP=""
+    The page theme color
+
+.PP
+\fB\-\-is.oauth.ui.title\fP=""
+    The page title
+
+.PP
+\fB\-\-is.profile\-picture.bucket\fP="profile\_pictures"
+    Bucket used for storing profile pictures
+
+.PP
+\fB\-\-is.profile\-picture.bucket\-url\fP="/assets/blob/profile\_pictures"
+    Base URL for public bucket access
+
+.PP
+\fB\-\-is.profile\-picture.use\-gravatar\fP[=true]
+    Use Gravatar fallback for users without profile picture
+
+.PP
+\fB\-\-is.user\-registration.admin\-approval.required\fP[=false]
+    Require admin approval for new users
+
+.PP
+\fB\-\-is.user\-registration.contact\-info\-validation.required\fP[=false]
+    Require contact info validation for new users
+
+.PP
+\fB\-\-is.user\-registration.invitation.required\fP[=false]
+    Require invitations for new users
+
+.PP
+\fB\-\-is.user\-registration.invitation.token\-ttl\fP=168h0m0s
+    TTL of user invitation tokens
+
+.PP
+\fB\-\-is.user\-registration.password\-requirements.min\-digits\fP=1
+    Minimum number of digits
+
+.PP
+\fB\-\-is.user\-registration.password\-requirements.min\-length\fP=8
+    Minimum password length
+
+.PP
+\fB\-\-is.user\-registration.password\-requirements.min\-special\fP=0
+    Minimum number of special characters
+
+.PP
+\fB\-\-is.user\-registration.password\-requirements.min\-uppercase\fP=1
+    Minimum number of uppercase letters
+
+.PP
+\fB\-\-js.join\-eui\-prefix\fP=[0000000000000000/0]
+    JoinEUI prefixes handled by this JS
+
+.PP
+\fB\-\-key\-vault.static\fP=[]
+    Static labeled key encryption keys
+
+.PP
+\fB\-\-log.level\fP="info"
+    The minimum level log messages must have to be shown
+
+.PP
+\fB\-\-ns.cooldown\-window\fP=1s
+    Time window starting right after deduplication window, during which, duplicate messages are discarded
+
+.PP
+\fB\-\-ns.deduplication\-window\fP=200ms
+    Time window during which, duplicate messages are collected for metadata
+
+.PP
+\fB\-\-ns.downlink\-priorities.join\-accept\fP="highest"
+    Priority for join\-accept messages (lowest, low, below\_normal, normal, above\_normal, high, highest)
+
+.PP
+\fB\-\-ns.downlink\-priorities.mac\-commands\fP="highest"
+    Priority for messages carrying MAC commands (lowest, low, below\_normal, normal, above\_normal, high, highest)
+
+.PP
+\fB\-\-ns.downlink\-priorities.max\-application\-downlink\fP="high"
+    Maximum priority for application downlink messages (lowest, low, below\_normal, normal, above\_normal, high, highest)
+
+.PP
+\fB\-\-redis.address\fP="localhost:6379"
+    Address of the Redis server
+
+.PP
+\fB\-\-redis.database\fP=0
+    Redis database to use
+
+.PP
+\fB\-\-redis.namespace\fP=[ttn,v3]
+    Namespace for Redis keys
+
+.PP
+\fB\-\-redis.password\fP=""
+    Password of the Redis server
+
+.PP
+\fB\-\-rights.ttl\fP=2m0s
+    Validity of Identity Server responses
+
+.PP
+\fB\-\-sentry.dsn\fP=""
+    Sentry Data Source Name
+
+.PP
+\fB\-\-tls.certificate\fP="cert.pem"
+    Location of TLS certificate
+
+.PP
+\fB\-\-tls.key\fP="key.pem"
+    Location of TLS private key
+
+.PP
+\fB\-\-tls.root\-ca\fP=""
+    Location of TLS root CA certificate (optional)
+
+
+.SH SEE ALSO
+.PP
+\fBttn\-lw\-stack\-is\-db(1)\fP

@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"go.thethings.network/lorawan-stack/cmd/internal/commands"
 	"go.thethings.network/lorawan-stack/cmd/internal/shared/version"
 	"go.thethings.network/lorawan-stack/cmd/ttn-lw-cli/internal/api"
 	"go.thethings.network/lorawan-stack/cmd/ttn-lw-cli/internal/io"
@@ -166,4 +167,6 @@ func init() {
 	Root.SetGlobalNormalizationFunc(util.NormalizeFlags)
 	Root.PersistentFlags().AddFlagSet(mgr.Flags())
 	Root.AddCommand(version.Print(name))
+	Root.AddCommand(commands.GenMD(Root))
+	Root.AddCommand(commands.GenMan(Root))
 }

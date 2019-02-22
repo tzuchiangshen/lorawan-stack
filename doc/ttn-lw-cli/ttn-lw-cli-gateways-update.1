@@ -1,0 +1,164 @@
+.TH "TTN-LW-CLI" "1" "Feb 2019" "TTN" "The Things Network Stack for LoRaWAN" 
+.nh
+.ad l
+
+
+.SH NAME
+.PP
+ttn\-lw\-cli\-gateways\-update \- Update a gateway
+
+
+.SH SYNOPSIS
+.PP
+\fBttn\-lw\-cli gateways update [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Update a gateway
+
+
+.SH OPTIONS
+.PP
+\fB\-\-antenna.add\fP[=false]
+    add an extra antenna
+
+.PP
+\fB\-\-antenna.gain\fP=0
+
+.PP
+\fB\-\-antenna.index\fP=0
+    index of the antenna to update or remove
+
+.PP
+\fB\-\-antenna.location.accuracy\fP=0
+
+.PP
+\fB\-\-antenna.location.altitude\fP=0
+
+.PP
+\fB\-\-antenna.location.latitude\fP=0
+
+.PP
+\fB\-\-antenna.location.longitude\fP=0
+
+.PP
+\fB\-\-antenna.location.source\fP=""
+    SOURCE\_GPS|SOURCE\_BT\_RSSI\_GEOLOCATION|SOURCE\_UNKNOWN|SOURCE\_REGISTRY|SOURCE\_IP\_GEOLOCATION|SOURCE\_WIFI\_RSSI\_GEOLOCATION|SOURCE\_LORA\_RSSI\_GEOLOCATION|SOURCE\_LORA\_TDOA\_GEOLOCATION|SOURCE\_COMBINED\_GEOLOCATION
+
+.PP
+\fB\-\-antenna.remove\fP[=false]
+    remove an antenna
+
+.PP
+\fB\-\-attributes\fP=[]
+    key=value
+
+.PP
+\fB\-\-auto\-update\fP[=false]
+
+.PP
+\fB\-\-description\fP=""
+
+.PP
+\fB\-\-downlink\-path\-constraint\fP=""
+    DOWNLINK\_PATH\_CONSTRAINT\_NONE|DOWNLINK\_PATH\_CONSTRAINT\_PREFER\_OTHER|DOWNLINK\_PATH\_CONSTRAINT\_NEVER
+
+.PP
+\fB\-\-enforce\-duty\-cycle\fP[=false]
+
+.PP
+\fB\-\-frequency\-plan\-id\fP=""
+
+.PP
+\fB\-\-gateway\-eui\fP=""
+
+.PP
+\fB\-\-gateway\-id\fP=""
+
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+    help for update
+
+.PP
+\fB\-\-location\-public\fP[=false]
+
+.PP
+\fB\-\-name\fP=""
+
+.PP
+\fB\-\-schedule\-downlink\-late\fP[=false]
+
+.PP
+\fB\-\-status\-public\fP[=false]
+
+.PP
+\fB\-\-update\-channel\fP=""
+
+.PP
+\fB\-\-version\-ids.brand\-id\fP=""
+
+.PP
+\fB\-\-version\-ids.firmware\-version\fP=""
+
+.PP
+\fB\-\-version\-ids.hardware\-version\fP=""
+
+.PP
+\fB\-\-version\-ids.model\-id\fP=""
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-application\-server\-address\fP="localhost:8884"
+    Application Server Address
+
+.PP
+\fB\-\-ca\fP=""
+    CA certificate file
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=[$HOME/.ttn\-lw\-cli.yml]
+    Location of the config files
+
+.PP
+\fB\-\-gateway\-server\-address\fP="localhost:8884"
+    Gateway Server Address
+
+.PP
+\fB\-\-identity\-server\-address\fP="localhost:8884"
+    Identity Server Address
+
+.PP
+\fB\-\-input\-format\fP="json"
+    Input format
+
+.PP
+\fB\-\-insecure\fP[=false]
+    Connect without TLS
+
+.PP
+\fB\-\-join\-server\-address\fP="localhost:8884"
+    Join Server Address
+
+.PP
+\fB\-\-log.level\fP="info"
+    The minimum level log messages must have to be shown
+
+.PP
+\fB\-\-network\-server\-address\fP="localhost:8884"
+    Network Server Address
+
+.PP
+\fB\-\-oauth\-server\-address\fP="
+\[la]https://localhost:8885"\[ra]
+    OAuth Server Address
+
+.PP
+\fB\-\-output\-format\fP="json"
+    Output format
+
+
+.SH SEE ALSO
+.PP
+\fBttn\-lw\-cli\-gateways(1)\fP

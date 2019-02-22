@@ -1,0 +1,341 @@
+.TH "TTN-LW-CLI" "1" "Feb 2019" "TTN" "The Things Network Stack for LoRaWAN" 
+.nh
+.ad l
+
+
+.SH NAME
+.PP
+ttn\-lw\-cli\-end\-devices\-create \- Create an end device
+
+
+.SH SYNOPSIS
+.PP
+\fBttn\-lw\-cli end\-devices create [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Create an end device
+
+
+.SH OPTIONS
+.PP
+\fB\-\-abp\fP[=false]
+    configure end device as ABP
+
+.PP
+\fB\-\-application\-id\fP=""
+
+.PP
+\fB\-\-attributes\fP=[]
+    key=value
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-ack\-delay\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-ack\-limit\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-data\-rate\-index\fP=""
+    DATA\_RATE\_7|DATA\_RATE\_12|DATA\_RATE\_0|DATA\_RATE\_5|DATA\_RATE\_6|DATA\_RATE\_9|DATA\_RATE\_11|DATA\_RATE\_1|DATA\_RATE\_4|DATA\_RATE\_8|DATA\_RATE\_2|DATA\_RATE\_3|DATA\_RATE\_10|DATA\_RATE\_13|DATA\_RATE\_14|DATA\_RATE\_15
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-nb\-trans\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.adr\-tx\-power\-index\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.beacon\-frequency\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.downlink\-dwell\-time\fP[=false]
+
+.PP
+\fB\-\-default\-mac\-parameters.max\-duty\-cycle\fP=""
+    DUTY\_CYCLE\_8|DUTY\_CYCLE\_64|DUTY\_CYCLE\_512|DUTY\_CYCLE\_1024|DUTY\_CYCLE\_32768|DUTY\_CYCLE\_2|DUTY\_CYCLE\_4|DUTY\_CYCLE\_32|DUTY\_CYCLE\_128|DUTY\_CYCLE\_1|DUTY\_CYCLE\_16|DUTY\_CYCLE\_256|DUTY\_CYCLE\_8192|DUTY\_CYCLE\_2048|DUTY\_CYCLE\_4096|DUTY\_CYCLE\_16384
+
+.PP
+\fB\-\-default\-mac\-parameters.max\-eirp\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.ping\-slot\-data\-rate\-index\fP=""
+    DATA\_RATE\_11|DATA\_RATE\_0|DATA\_RATE\_5|DATA\_RATE\_6|DATA\_RATE\_9|DATA\_RATE\_1|DATA\_RATE\_4|DATA\_RATE\_8|DATA\_RATE\_14|DATA\_RATE\_15|DATA\_RATE\_2|DATA\_RATE\_3|DATA\_RATE\_10|DATA\_RATE\_13|DATA\_RATE\_7|DATA\_RATE\_12
+
+.PP
+\fB\-\-default\-mac\-parameters.ping\-slot\-frequency\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.rejoin\-count\-periodicity\fP=""
+    REJOIN\_COUNT\_128|REJOIN\_COUNT\_8192|REJOIN\_COUNT\_16384|REJOIN\_COUNT\_32768|REJOIN\_COUNT\_32|REJOIN\_COUNT\_1024|REJOIN\_COUNT\_2048|REJOIN\_COUNT\_131072|REJOIN\_COUNT\_512|REJOIN\_COUNT\_262144|REJOIN\_COUNT\_16|REJOIN\_COUNT\_64|REJOIN\_COUNT\_256|REJOIN\_COUNT\_4096|REJOIN\_COUNT\_65536|REJOIN\_COUNT\_524288
+
+.PP
+\fB\-\-default\-mac\-parameters.rejoin\-time\-periodicity\fP=""
+    REJOIN\_TIME\_0|REJOIN\_TIME\_2|REJOIN\_TIME\_5|REJOIN\_TIME\_7|REJOIN\_TIME\_9|REJOIN\_TIME\_14|REJOIN\_TIME\_12|REJOIN\_TIME\_13|REJOIN\_TIME\_15|REJOIN\_TIME\_1|REJOIN\_TIME\_3|REJOIN\_TIME\_8|REJOIN\_TIME\_10|REJOIN\_TIME\_11|REJOIN\_TIME\_4|REJOIN\_TIME\_6
+
+.PP
+\fB\-\-default\-mac\-parameters.rx1\-data\-rate\-offset\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.rx1\-delay\fP=""
+    RX\_DELAY\_3|RX\_DELAY\_7|RX\_DELAY\_9|RX\_DELAY\_4|RX\_DELAY\_5|RX\_DELAY\_6|RX\_DELAY\_8|RX\_DELAY\_10|RX\_DELAY\_11|RX\_DELAY\_0|RX\_DELAY\_1|RX\_DELAY\_12|RX\_DELAY\_14|RX\_DELAY\_15|RX\_DELAY\_2|RX\_DELAY\_13
+
+.PP
+\fB\-\-default\-mac\-parameters.rx2\-data\-rate\-index\fP=""
+    DATA\_RATE\_9|DATA\_RATE\_11|DATA\_RATE\_0|DATA\_RATE\_5|DATA\_RATE\_6|DATA\_RATE\_1|DATA\_RATE\_4|DATA\_RATE\_8|DATA\_RATE\_13|DATA\_RATE\_14|DATA\_RATE\_15|DATA\_RATE\_2|DATA\_RATE\_3|DATA\_RATE\_10|DATA\_RATE\_7|DATA\_RATE\_12
+
+.PP
+\fB\-\-default\-mac\-parameters.rx2\-frequency\fP=0
+
+.PP
+\fB\-\-default\-mac\-parameters.uplink\-dwell\-time\fP[=false]
+
+.PP
+\fB\-\-defaults\fP[=true]
+    configure end device with defaults
+
+.PP
+\fB\-\-description\fP=""
+
+.PP
+\fB\-\-dev\-eui\fP=""
+    (hex)
+
+.PP
+\fB\-\-device\-id\fP=""
+
+.PP
+\fB\-\-formatters.down\-formatter\fP=""
+    FORMATTER\_NONE|FORMATTER\_REPOSITORY|FORMATTER\_GRPC\_SERVICE|FORMATTER\_JAVASCRIPT|FORMATTER\_CAYENNELPP
+
+.PP
+\fB\-\-formatters.down\-formatter\-parameter\fP=""
+
+.PP
+\fB\-\-formatters.up\-formatter\fP=""
+    FORMATTER\_CAYENNELPP|FORMATTER\_NONE|FORMATTER\_REPOSITORY|FORMATTER\_GRPC\_SERVICE|FORMATTER\_JAVASCRIPT
+
+.PP
+\fB\-\-formatters.up\-formatter\-parameter\fP=""
+
+.PP
+\fB\-\-frequency\-plan\-id\fP=""
+
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+    help for create
+
+.PP
+\fB\-\-join\-eui\fP=""
+    (hex)
+
+.PP
+\fB\-\-last\-dev\-nonce\fP=0
+
+.PP
+\fB\-\-last\-join\-nonce\fP=0
+
+.PP
+\fB\-\-last\-rj\-count\-0\fP=0
+
+.PP
+\fB\-\-last\-rj\-count\-1\fP=0
+
+.PP
+\fB\-\-lorawan\-phy\-version\fP=""
+    PHY\_UNKNOWN|PHY\_V1\_0|PHY\_V1\_0\_1|PHY\_V1\_0\_2\_REV\_A|PHY\_V1\_0\_2\_REV\_B|PHY\_V1\_1\_REV\_A|PHY\_V1\_1\_REV\_B
+
+.PP
+\fB\-\-lorawan\-version\fP=""
+    MAC\_V1\_0\_1|MAC\_V1\_0\_2|MAC\_V1\_1|MAC\_UNKNOWN|MAC\_V1\_0
+
+.PP
+\fB\-\-mac\-settings.adr\-margin\fP=0
+
+.PP
+\fB\-\-mac\-settings.class\-b\-timeout\fP=0s
+    (1h2m3s)
+
+.PP
+\fB\-\-mac\-settings.class\-c\-timeout\fP=0s
+    (1h2m3s)
+
+.PP
+\fB\-\-mac\-settings.status\-count\-periodicity\fP=0
+
+.PP
+\fB\-\-mac\-settings.status\-time\-periodicity\fP=0s
+    (1h2m3s)
+
+.PP
+\fB\-\-mac\-settings.use\-adr\fP[=false]
+
+.PP
+\fB\-\-max\-frequency\fP=0
+
+.PP
+\fB\-\-min\-frequency\fP=0
+
+.PP
+\fB\-\-name\fP=""
+
+.PP
+\fB\-\-net\-id\fP=""
+    (hex)
+
+.PP
+\fB\-\-provisioner\-id\fP=""
+
+.PP
+\fB\-\-resets\-f\-cnt\fP[=false]
+
+.PP
+\fB\-\-resets\-join\-nonces\fP[=false]
+
+.PP
+\fB\-\-root\-keys.app\-key.kek\-label\fP=""
+
+.PP
+\fB\-\-root\-keys.app\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-root\-keys.nwk\-key.kek\-label\fP=""
+
+.PP
+\fB\-\-root\-keys.nwk\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-root\-keys.root\-key\-id\fP=""
+
+.PP
+\fB\-\-service\-profile\-id\fP=""
+
+.PP
+\fB\-\-session.dev\-addr\fP=""
+    (hex)
+
+.PP
+\fB\-\-session.keys.app\-s\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-session.keys.f\-nwk\-s\-int\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-session.keys.nwk\-s\-enc\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-session.keys.s\-nwk\-s\-int\-key.key\fP=""
+    (hex)
+
+.PP
+\fB\-\-session.last\-a\-f\-cnt\-down\fP=0
+
+.PP
+\fB\-\-session.last\-conf\-f\-cnt\-down\fP=0
+
+.PP
+\fB\-\-session.last\-f\-cnt\-up\fP=0
+
+.PP
+\fB\-\-session.last\-n\-f\-cnt\-down\fP=0
+
+.PP
+\fB\-\-session.started\-at\fP=""
+    (YYYY\-MM\-DDTHH:MM:SSZ)
+
+.PP
+\fB\-\-supports\-class\-b\fP[=false]
+
+.PP
+\fB\-\-supports\-class\-c\fP[=false]
+
+.PP
+\fB\-\-supports\-join\fP[=false]
+
+.PP
+\fB\-\-used\-dev\-nonces\fP=[]
+
+.PP
+\fB\-\-uses\-32\-bit\-f\-cnt\fP[=false]
+
+.PP
+\fB\-\-version\-ids.brand\-id\fP=""
+
+.PP
+\fB\-\-version\-ids.firmware\-version\fP=""
+
+.PP
+\fB\-\-version\-ids.hardware\-version\fP=""
+
+.PP
+\fB\-\-version\-ids.model\-id\fP=""
+
+.PP
+\fB\-\-with\-root\-keys\fP[=false]
+    generate OTAA root keys
+
+.PP
+\fB\-\-with\-session\fP[=false]
+    generate ABP session DevAddr and keys
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-application\-server\-address\fP="localhost:8884"
+    Application Server Address
+
+.PP
+\fB\-\-ca\fP=""
+    CA certificate file
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=[$HOME/.ttn\-lw\-cli.yml]
+    Location of the config files
+
+.PP
+\fB\-\-gateway\-server\-address\fP="localhost:8884"
+    Gateway Server Address
+
+.PP
+\fB\-\-identity\-server\-address\fP="localhost:8884"
+    Identity Server Address
+
+.PP
+\fB\-\-input\-format\fP="json"
+    Input format
+
+.PP
+\fB\-\-insecure\fP[=false]
+    Connect without TLS
+
+.PP
+\fB\-\-join\-server\-address\fP="localhost:8884"
+    Join Server Address
+
+.PP
+\fB\-\-log.level\fP="info"
+    The minimum level log messages must have to be shown
+
+.PP
+\fB\-\-network\-server\-address\fP="localhost:8884"
+    Network Server Address
+
+.PP
+\fB\-\-oauth\-server\-address\fP="
+\[la]https://localhost:8885"\[ra]
+    OAuth Server Address
+
+.PP
+\fB\-\-output\-format\fP="json"
+    Output format
+
+
+.SH SEE ALSO
+.PP
+\fBttn\-lw\-cli\-end\-devices(1)\fP
