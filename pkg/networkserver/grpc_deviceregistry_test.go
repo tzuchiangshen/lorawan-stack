@@ -65,8 +65,8 @@ func TestDeviceRegistryGet(t *testing.T) {
 				})
 			},
 			GetByIDFunc: func(ctx context.Context, appID ttnpb.ApplicationIdentifiers, devID string, paths []string) (*ttnpb.EndDevice, error) {
-				test.MustTFromContext(ctx).Fatal("GetByIDFunc must not be called")
-				panic("Unreachable")
+				test.MustTFromContext(ctx).Errorf("GetByIDFunc must not be called")
+				return nil, errors.New("GetByIDFunc must not be called")
 			},
 			Request: &ttnpb.GetEndDeviceRequest{
 				EndDeviceIdentifiers: ids,
@@ -208,8 +208,8 @@ func TestDeviceRegistrySet(t *testing.T) {
 				})
 			},
 			SetByIDFunc: func(ctx context.Context, appID ttnpb.ApplicationIdentifiers, devID string, gets []string, f func(*ttnpb.EndDevice) (*ttnpb.EndDevice, []string, error)) (*ttnpb.EndDevice, error) {
-				test.MustTFromContext(ctx).Fatal("SetByIDFunc must not be called")
-				panic("Unreachable")
+				test.MustTFromContext(ctx).Errorf("SetByIDFunc must not be called")
+				return nil, errors.New("SetByIDFunc must not be called")
 			},
 			Request: &ttnpb.SetEndDeviceRequest{
 				Device: ttnpb.EndDevice{
@@ -424,8 +424,8 @@ func TestDeviceRegistryDelete(t *testing.T) {
 				})
 			},
 			SetByIDFunc: func(ctx context.Context, appID ttnpb.ApplicationIdentifiers, devID string, gets []string, f func(*ttnpb.EndDevice) (*ttnpb.EndDevice, []string, error)) (*ttnpb.EndDevice, error) {
-				test.MustTFromContext(ctx).Fatal("SetByIDFunc must not be called")
-				panic("Unreachable")
+				test.MustTFromContext(ctx).Errorf("SetByIDFunc must not be called")
+				return nil, errors.New("SetByIDFunc must not be called")
 			},
 			Request: deepcopy.Copy(&ids).(*ttnpb.EndDeviceIdentifiers),
 			ErrorAssertion: func(t *testing.T, err error) bool {
